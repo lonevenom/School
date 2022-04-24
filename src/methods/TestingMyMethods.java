@@ -2,8 +2,22 @@ package methods;
 
 import utilities.MyMethods;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+
 public class TestingMyMethods {
-    public static void main(String[] args) {
+
+
+
+
+
+
+
+
+
+
+        public static void main(String[] args) {
 
         int num1 = 2, num2 = 6, num3 = 3, num4 = 9;
 
