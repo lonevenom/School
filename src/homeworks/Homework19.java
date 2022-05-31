@@ -52,7 +52,7 @@ public class Homework19 {
     public static int[] arrFactorial(int[] num) {
         for (int i = 0; i < num.length; i++) {
             if (num[i] == 0) num[i] = 1;
-                int total = 1;
+            int total = 1;
             for (int j = num[i]; j > 0; j--) {
                 total *= j;
             }
