@@ -3,7 +3,6 @@ package homeworks;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Homework20 {
 
@@ -55,13 +54,44 @@ public class Homework20 {
     }
 
     // =========================== Task 6 Method ===========================
+    public static String removeStringSpecialsDigits(String userStr){
+        userStr = userStr.replaceAll("[0-9$&+,:;=?@#|'<>.^*()%!-]", "");
+        return userStr;
+    }
+
 
     // =========================== Task 7 Method ===========================
-
+    public static String[] removeArraySpecialsDigits(String[] userArr) {
+        String[] newArr = new String[userArr.length];
+        for (int i = 0; i < userArr.length; i++) {
+            userArr[i] = userArr[i].replaceAll("[0-9$&+,:;=?@#|'<>.^*()%!-]", "");
+        }
+        return userArr;
+    }
     // =========================== Task 8 Method ===========================
+    public static ArrayList<String> removeAndReturnCommons(ArrayList<String> userArr1, ArrayList<String> userArr2) {
+        ArrayList<String> newArr = new ArrayList<>();
+        for (String object : userArr1) {
+            for (String element : userArr2) {
+                if (object.equals(element) && !newArr.contains(object)) newArr.add(object);
+            }
+        }
+        return newArr;
+    }
+
+
+
 
     // =========================== Task 9 Method ===========================
+    public static ArrayList<String> noXInVariables(ArrayList<String> userArr){
 
+        for (int i = 0; i < userArr.size(); i++) {
+            String noXElement = userArr.get(i).replaceAll("[xX]", "");
+            if (noXElement.isEmpty()) userArr.remove(i--);
+            else userArr.set(i, noXElement);
+        }
+        return userArr;
+    }
 
     public static void main(String[] args) {
         // ============================= Task 1 =============================
@@ -98,21 +128,36 @@ public class Homework20 {
         // ============================= Task 6 =============================
         System.out.println("************ Task 6************");
 
+        String taskSixTestData = "Selenium 123#$%Cypress";
+        System.out.println(removeStringSpecialsDigits(taskSixTestData));
 
         // ============================= Task 7 =============================
         System.out.println("************ Task 7************");
 
+        String[] taskSevenTestData = {"123Java", "#$%is", "fun"};
+        System.out.println(Arrays.toString(removeArraySpecialsDigits(taskSevenTestData)));
 
         // ============================= Task 8 =============================
         System.out.println("************ Task 8************");
+        ArrayList<String> set1TestData = new ArrayList<>();
+        set1TestData.add("Java");
+        set1TestData.add("is");
+        set1TestData.add("fun");
+        ArrayList<String> set2TestData = new ArrayList<>();
+        set2TestData.add("Java");
+        set2TestData.add("C#");
+        set2TestData.add("Python");
 
-
+        System.out.println(removeAndReturnCommons(set1TestData, set2TestData));
 
         // ============================= Task 9 =============================
         System.out.println("************ Task 9************");
 
+        ArrayList<String> set3TestData = new ArrayList<>();
+        set3TestData.add("xxxxxxxxx");
+        set3TestData.add("123");
+        set3TestData.add("#$%");
 
-
-
+        System.out.println(noXInVariables(set3TestData));
     }
 }
