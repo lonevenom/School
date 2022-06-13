@@ -1,5 +1,7 @@
 package utilities;
 
+import java.util.ArrayList;
+
 public class CharacterHelper {
 
     /*
@@ -102,6 +104,9 @@ public class CharacterHelper {
     public static boolean isSpecial(char c){
         return c < 48 || (c > 57 && c < 65) || (c > 90 && c < 97) || c > 122;
     }
+
+
+
 
 
 }
