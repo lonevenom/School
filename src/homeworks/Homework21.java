@@ -22,6 +22,7 @@ public class Homework21 {
         return "";
     }
 
+    // =========================== Task 2 Method ===========================
     public static String fizzBuzz2(int userNum) {
         StringBuilder str = new StringBuilder("");
 
@@ -34,7 +35,8 @@ public class Homework21 {
         else System.out.println(userNum);
         return "";
     }
-
+    
+    // =========================== Task 3 Method ===========================
     public static int findSumNumbers(String str) {
         str = str.replaceAll("[^0-9]", " ");
         int sum = 0;
@@ -45,7 +47,8 @@ public class Homework21 {
         }
         return sum;
     }
-
+    
+    // =========================== Task 4 Method ===========================
     public static int findBiggestNumber(String str) {
         str = str.replaceAll("[^0-9]", " ");
         int biggest = 0;
@@ -58,26 +61,8 @@ public class Homework21 {
         }
         return max;
     }
-
-    /*
-    public static String countSequenceOfCharacters(String str){
-        StringBuilder answer = new StringBuilder("");
-
-        for (int i = 0, j = i + 1; i < str.length();) {
-            int counter = 1;
-            if (str.charAt(j) == str.charAt(i)) {
-                do {
-                    counter++;
-                    i = j;
-                    j++;
-                } while (str.charAt(j) == str.charAt(i));
-            }
-            answer.append(counter);
-            answer.append(str.charAt(i));
-        }
-        return answer.toString();
-    }
-    */
+    
+    // =========================== Task 5 Method ===========================
     public static String countSequenceOfCharacters(String str) { // (I wanted to solve without two loops)
         StringBuilder answer = new StringBuilder("");
         List<String> temp = new ArrayList<>();
